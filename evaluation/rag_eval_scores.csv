@@ -1,0 +1,124 @@
+question_id,category,question,expected_answer,generated_answer,retrieved_pages,expected_pages,precision_at_k,recall_at_k,reciprocal_rank,faithfulness,answer_relevance
+TC-EVAL-001,Alert Escalation,What is the escalation timeline when a Severity-1 (P0) alert triggers in PagerDuty?,"Under Section 9.1 on Page 41: 1. The L1 On-Call Engineer has a maximum of 5 minutes to acknowledge the alert. 2. If unacknowledged at 5 minutes, PagerDuty pages the L2 Staff SRE Lead. 3. If unacknowledged for 15 minutes total, it automatically escalates to the VP of Infrastructure.","[Notice: GEMINI_API_KEY is not configured in environment]
+According to the TitanCloud SRE Incident Runbook [Page 41]:
+TitanCloud Enterprise SRE & Incident Response Runbook - Official Reference Corpus
+Document Page 41 of 50
+CHAPTER 5 | MODULE 41.0: DISTRIBUTED KUBERNETES CONTROL PLANE TELEMETRY AND POD
+EVICTION POLICIES
+========================================================================
+SECTION 9.1: SEVERITY-1 (P0) ON-CALL ACKNOWLEDGEMENT & ESCALATION TIMELINE
+When a Severity-1 (P0) production outage alert triggers in PagerDuty:
+1. The L1 On-Call Engineer has a maximum of 5 minutes to acknowledge the alert.
+2. If unacknowledged at the 5-minute mark, PagerDuty pages the L2 Staff SRE Lead.
+3. If the alert remains unacknowledged for 15 minutes total (10 minutes after L2
+page), it automatically escalates to the VP of Infrastructure.
+ Operational Compliance Note (Ref-2-41): All personnel and automated auditing
+systems reviewing ’TitanCloud Enterprise SRE & Incident Response Runbook’ must","[41, 10, 30, 20]",[41],0.25,1.0,1.0,0.9744,1.0
+TC-EVAL-002,SLA and SLO,What uptime guarantee SLA does TitanCloud provide across production clusters?,Under Section 2.3 on Page 9: TitanCloud guarantees a 99.95% monthly uptime Service Level Agreement (SLA) across all production multi-AZ clusters.,"[Notice: GEMINI_API_KEY is not configured in environment]
+According to the TitanCloud SRE Incident Runbook [Page 9]:
+TitanCloud Enterprise SRE & Incident Response Runbook - Official Reference Corpus
+Document Page 9 of 50
+CHAPTER 1 | MODULE 9.0: ZERO-TRUST SERVICE MESH MTLS CERTIFICATE ROTATION
+PROCEDURES
+========================================================================
+SECTION 2.3: ENTERPRISE UPTIME SLA & SERVICE CREDIT SCHEDULE
+TitanCloud guarantees a 99.95% monthly uptime Service Level Agreement (SLA) across
+all production multi-AZ clusters. If monthly uptime drops below the threshold,
+enterprise customers are owed the following SLA service credit percentages applied
+against their monthly cluster invoice:
+- 99.50% to 99.94% uptime: 10% service credit
+- 99.00% to 99.49% uptime (including 99.2%): 25% service credit
+- Below 99.00% uptime: 50% service credit
+ Operational Compliance Note (Ref-2-09): All personnel and automated auditing","[9, 35, 33, 8]",[9],0.25,1.0,1.0,0.975,1.0
+TC-EVAL-003,SLA and SLO,What are the service credit percentages when monthly uptime drops below thresholds?,Under Section 2.3 on Page 9: 99.50% to 99.94% uptime yields a 10% service credit; 99.00% to 99.49% uptime yields a 25% service credit; below 99.00% uptime yields a 50% service credit applied against the monthly cluster invoice.,"[Notice: GEMINI_API_KEY is not configured in environment]
+According to the TitanCloud SRE Incident Runbook [Page 9]:
+TitanCloud Enterprise SRE & Incident Response Runbook - Official Reference Corpus
+Document Page 9 of 50
+CHAPTER 1 | MODULE 9.0: ZERO-TRUST SERVICE MESH MTLS CERTIFICATE ROTATION
+PROCEDURES
+========================================================================
+SECTION 2.3: ENTERPRISE UPTIME SLA & SERVICE CREDIT SCHEDULE
+TitanCloud guarantees a 99.95% monthly uptime Service Level Agreement (SLA) across
+all production multi-AZ clusters. If monthly uptime drops below the threshold,
+enterprise customers are owed the following SLA service credit percentages applied
+against their monthly cluster invoice:
+- 99.50% to 99.94% uptime: 10% service credit
+- 99.00% to 99.49% uptime (including 99.2%): 25% service credit
+- Below 99.00% uptime: 50% service credit
+ Operational Compliance Note (Ref-2-09): All personnel and automated auditing","[9, 9, 13, 33]",[9],0.5,1.0,1.0,0.975,1.0
+TC-EVAL-004,Error Codes,What does the error code ERR_PG_REPLICA_LAG indicate?,Under Section 5.4 on Page 22: Alert Signature ERR_PG_REPLICA_LAG indicates write-ahead log (WAL) replay delay between the primary PostgreSQL node and synchronous standby replicas.,"[Notice: GEMINI_API_KEY is not configured in environment]
+According to the TitanCloud SRE Incident Runbook [Page 22]:
+TitanCloud Enterprise SRE & Incident Response Runbook - Official Reference Corpus
+Document Page 22 of 50
+CHAPTER 3 | MODULE 22.0: MULTI-REGION BGP ANYCAST INGRESS ROUTING AND DDOS
+SCRUBBING
+========================================================================
+SECTION 5.4: RUNBOOK FOR ERROR CODE ERR_PG_REPLICA_LAG
+Alert Signature: ERR_PG_REPLICA_LAG indicates write-ahead log (WAL) replay delay
+between the primary PostgreSQL node and synchronous standby replicas.
+AUTOMATIC FAILOVER THRESHOLD: The maximum permitted replication lag threshold is
+strictly 45 seconds. If replication lag exceeds 45 seconds across three
+consecutive 5-second health probes, the Patroni consensus controller automatically
+fences the degraded node and initiates failover to the healthy standby.
+ Operational Compliance Note (Ref-2-22): All personnel and automated auditing","[22, 28, 18, 43]",[22],0.25,1.0,1.0,0.9722,1.0
+TC-EVAL-005,Troubleshooting,What is the automatic failover threshold for PostgreSQL replication lag?,"Under Section 5.4 on Page 22: The maximum permitted replication lag threshold is strictly 45 seconds. If replication lag exceeds 45 seconds across three consecutive 5-second health probes, Patroni consensus controller automatically fences the degraded node and initiates failover to the healthy standby.","[Notice: GEMINI_API_KEY is not configured in environment]
+According to the TitanCloud SRE Incident Runbook [Page 22]:
+TitanCloud Enterprise SRE & Incident Response Runbook - Official Reference Corpus
+Document Page 22 of 50
+CHAPTER 3 | MODULE 22.0: MULTI-REGION BGP ANYCAST INGRESS ROUTING AND DDOS
+SCRUBBING
+========================================================================
+SECTION 5.4: RUNBOOK FOR ERROR CODE ERR_PG_REPLICA_LAG
+Alert Signature: ERR_PG_REPLICA_LAG indicates write-ahead log (WAL) replay delay
+between the primary PostgreSQL node and synchronous standby replicas.
+AUTOMATIC FAILOVER THRESHOLD: The maximum permitted replication lag threshold is
+strictly 45 seconds. If replication lag exceeds 45 seconds across three
+consecutive 5-second health probes, the Patroni consensus controller automatically
+fences the degraded node and initiates failover to the healthy standby.
+ Operational Compliance Note (Ref-2-22): All personnel and automated auditing","[22, 48, 38, 3]",[22],0.25,1.0,1.0,0.9722,0.8333
+TC-EVAL-006,Incident Management,Who is paged if a Severity-1 incident remains unacknowledged after 15 minutes?,"Under Section 9.1 on Page 41: If the alert remains unacknowledged for 15 minutes total (10 minutes after L2 page), it automatically escalates to the VP of Infrastructure.","[Notice: GEMINI_API_KEY is not configured in environment]
+According to the TitanCloud SRE Incident Runbook [Page 41]:
+TitanCloud Enterprise SRE & Incident Response Runbook - Official Reference Corpus
+Document Page 41 of 50
+CHAPTER 5 | MODULE 41.0: DISTRIBUTED KUBERNETES CONTROL PLANE TELEMETRY AND POD
+EVICTION POLICIES
+========================================================================
+SECTION 9.1: SEVERITY-1 (P0) ON-CALL ACKNOWLEDGEMENT & ESCALATION TIMELINE
+When a Severity-1 (P0) production outage alert triggers in PagerDuty:
+1. The L1 On-Call Engineer has a maximum of 5 minutes to acknowledge the alert.
+2. If unacknowledged at the 5-minute mark, PagerDuty pages the L2 Staff SRE Lead.
+3. If the alert remains unacknowledged for 15 minutes total (10 minutes after L2
+page), it automatically escalates to the VP of Infrastructure.
+ Operational Compliance Note (Ref-2-41): All personnel and automated auditing
+systems reviewing ’TitanCloud Enterprise SRE & Incident Response Runbook’ must","[41, 15, 10, 35]",[41],0.25,1.0,1.0,0.9744,1.0
+TC-EVAL-007,Root Cause Analysis,Where must records associated with post-mortem blameless root-cause analysis be archived?,"Under Module 25 on Page 25 (and Modules 5, 10, 15, 20, 30, 35, 40, 45, 50): All routine records associated with post-mortem blameless root-cause analysis and action item SLAs shall be archived in the central repository at the conclusion of each operational cycle for longitudinal review.","[Notice: GEMINI_API_KEY is not configured in environment]
+According to the TitanCloud SRE Incident Runbook [Page 10]:
+During standard operations under Module 10, teams are required to conduct periodic
+reviews of system state, documentation completeness, and safety margins. All
+routine records associated with post-mortem blameless root-cause analysis and
+action item slas shall be archived in the central repository at the conclusion of
+each operational cycle for longitudinal review.
+3. Archival & Verification Notes (Reference Clause 10.3)
+No external assumptions or unverified parameters may be substituted for the
+explicit tables contained within this 50-page manual. Refer to the specific
+numbered sections of this handbook for exact quantitative thresholds, timelines,
+and escalation contacts.
+Page 10 of 50 | Confidential Assessment Corpus - Do Not Distribute","[10, 5, 35, 30]","[5, 10, 15, 20, 25, 30, 35, 40, 45, 50]",1.0,0.4,1.0,0.7778,1.0
+TC-EVAL-008,Troubleshooting,What governance standard applies to distributed Kubernetes control plane telemetry under Module 1.0?,Under Module 1.0 on Page 1: Practitioners must ensure routine workflows adhere to documented institutional protocols and maintain verifiable audit logs across all stages of execution.,"[Notice: GEMINI_API_KEY is not configured in environment]
+According to the TitanCloud SRE Incident Runbook [Page 1]:
+TitanCloud Enterprise SRE & Incident Response Runbook - Official Reference Corpus
+Document Page 1 of 50
+CHAPTER 1 | MODULE 1.0: DISTRIBUTED KUBERNETES CONTROL PLANE TELEMETRY AND POD
+EVICTION POLICIES
+========================================================================
+1. Overview of Distributed Kubernetes Control Plane Telemetry and Pod Eviction
+Policies (Reference Clause 1.1)
+This section of ’TitanCloud Enterprise SRE & Incident Response Runbook’
+establishes the baseline operational procedures, governance standards, and quality
+assurance metrics applicable to Page 1. Practitioners must ensure that routine
+workflows adhere to documented institutional protocols and maintain verifiable
+audit logs across all stages of execution.
+2. Standard Procedural Guidelines (Reference Clause 1.2)
+During standard operations under Module 1, teams are required to conduct periodic","[1, 11, 21, 31]",[1],0.25,1.0,1.0,0.9615,0.6667
+TC-EVAL-009,Hallucination Prevention,What is the recommended Java heap size for the billing microservice?,The uploaded SRE runbook does not contain sufficient information to answer this question.,The uploaded SRE runbook does not contain sufficient information to answer this question.,[],[],1.0,1.0,1.0,1.0,1.0
+TC-EVAL-010,Hallucination Prevention,Who is the Chief Executive Officer of TitanCloud and what is their personal phone number?,The uploaded SRE runbook does not contain sufficient information to answer this question.,The uploaded SRE runbook does not contain sufficient information to answer this question.,[],[],1.0,1.0,1.0,1.0,1.0

@@ -1,0 +1,82 @@
+[
+  {
+    "id": "TC-EVAL-001",
+    "category": "Alert Escalation",
+    "question": "What is the escalation timeline when a Severity-1 (P0) alert triggers in PagerDuty?",
+    "expected_answer": "Under Section 9.1 on Page 41: 1. The L1 On-Call Engineer has a maximum of 5 minutes to acknowledge the alert. 2. If unacknowledged at 5 minutes, PagerDuty pages the L2 Staff SRE Lead. 3. If unacknowledged for 15 minutes total, it automatically escalates to the VP of Infrastructure.",
+    "relevant_pages": [41],
+    "expected_entities": ["5 minutes", "L1", "L2 Staff SRE Lead", "15 minutes", "VP of Infrastructure", "PagerDuty"]
+  },
+  {
+    "id": "TC-EVAL-002",
+    "category": "SLA and SLO",
+    "question": "What uptime guarantee SLA does TitanCloud provide across production clusters?",
+    "expected_answer": "Under Section 2.3 on Page 9: TitanCloud guarantees a 99.95% monthly uptime Service Level Agreement (SLA) across all production multi-AZ clusters.",
+    "relevant_pages": [9],
+    "expected_entities": ["99.95%", "monthly uptime", "multi-AZ clusters", "Service Level Agreement"]
+  },
+  {
+    "id": "TC-EVAL-003",
+    "category": "SLA and SLO",
+    "question": "What are the service credit percentages when monthly uptime drops below thresholds?",
+    "expected_answer": "Under Section 2.3 on Page 9: 99.50% to 99.94% uptime yields a 10% service credit; 99.00% to 99.49% uptime yields a 25% service credit; below 99.00% uptime yields a 50% service credit applied against the monthly cluster invoice.",
+    "relevant_pages": [9],
+    "expected_entities": ["10%", "25%", "50%", "service credit", "99.00%", "99.50%"]
+  },
+  {
+    "id": "TC-EVAL-004",
+    "category": "Error Codes",
+    "question": "What does the error code ERR_PG_REPLICA_LAG indicate?",
+    "expected_answer": "Under Section 5.4 on Page 22: Alert Signature ERR_PG_REPLICA_LAG indicates write-ahead log (WAL) replay delay between the primary PostgreSQL node and synchronous standby replicas.",
+    "relevant_pages": [22],
+    "expected_entities": ["ERR_PG_REPLICA_LAG", "write-ahead log", "WAL", "replay delay", "primary PostgreSQL node", "standby replicas"]
+  },
+  {
+    "id": "TC-EVAL-005",
+    "category": "Troubleshooting",
+    "question": "What is the automatic failover threshold for PostgreSQL replication lag?",
+    "expected_answer": "Under Section 5.4 on Page 22: The maximum permitted replication lag threshold is strictly 45 seconds. If replication lag exceeds 45 seconds across three consecutive 5-second health probes, Patroni consensus controller automatically fences the degraded node and initiates failover to the healthy standby.",
+    "relevant_pages": [22],
+    "expected_entities": ["45 seconds", "three consecutive", "5-second health probes", "Patroni", "fences", "failover"]
+  },
+  {
+    "id": "TC-EVAL-006",
+    "category": "Incident Management",
+    "question": "Who is paged if a Severity-1 incident remains unacknowledged after 15 minutes?",
+    "expected_answer": "Under Section 9.1 on Page 41: If the alert remains unacknowledged for 15 minutes total (10 minutes after L2 page), it automatically escalates to the VP of Infrastructure.",
+    "relevant_pages": [41],
+    "expected_entities": ["15 minutes", "VP of Infrastructure", "escalates"]
+  },
+  {
+    "id": "TC-EVAL-007",
+    "category": "Root Cause Analysis",
+    "question": "Where must records associated with post-mortem blameless root-cause analysis be archived?",
+    "expected_answer": "Under Module 25 on Page 25 (and Modules 5, 10, 15, 20, 30, 35, 40, 45, 50): All routine records associated with post-mortem blameless root-cause analysis and action item SLAs shall be archived in the central repository at the conclusion of each operational cycle for longitudinal review.",
+    "relevant_pages": [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],
+    "expected_entities": ["central repository", "longitudinal review", "operational cycle", "blameless root-cause analysis"]
+  },
+  {
+    "id": "TC-EVAL-008",
+    "category": "Troubleshooting",
+    "question": "What governance standard applies to distributed Kubernetes control plane telemetry under Module 1.0?",
+    "expected_answer": "Under Module 1.0 on Page 1: Practitioners must ensure routine workflows adhere to documented institutional protocols and maintain verifiable audit logs across all stages of execution.",
+    "relevant_pages": [1],
+    "expected_entities": ["institutional protocols", "verifiable audit logs", "distributed kubernetes control plane telemetry"]
+  },
+  {
+    "id": "TC-EVAL-009",
+    "category": "Hallucination Prevention",
+    "question": "What is the recommended Java heap size for the billing microservice?",
+    "expected_answer": "The uploaded SRE runbook does not contain sufficient information to answer this question.",
+    "relevant_pages": [],
+    "expected_entities": []
+  },
+  {
+    "id": "TC-EVAL-010",
+    "category": "Hallucination Prevention",
+    "question": "Who is the Chief Executive Officer of TitanCloud and what is their personal phone number?",
+    "expected_answer": "The uploaded SRE runbook does not contain sufficient information to answer this question.",
+    "relevant_pages": [],
+    "expected_entities": []
+  }
+]
